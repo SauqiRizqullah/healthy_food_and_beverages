@@ -17,5 +17,5 @@ public class CustomerRequest {
     @Pattern(regexp = "^08\\d{9,11}$", message = "Mobile phone number's pattern must be started by 08 and has 9 until 12 digits")
     private String mobilePhoneNo;
     private String membershipId;
-    private Integer poin;
+//    private Integer poin;
 }

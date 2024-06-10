@@ -16,4 +16,7 @@ public interface BonusRepository extends JpaRepository<Bonus, String>, JpaSpecif
     @Modifying
     @Query(value = "UPDATE m_bonus SET poin = :poin WHERE bonus_id = :bonusId", nativeQuery = true)
     void updatePoinById(@Param("poin") Integer poin, @Param("bonusId") String bonusId);
+
+    @Query(value = "SELECT * FROM m_bonus WHERE bonus_name = :bonusName", nativeQuery = true)
+    Bonus findByName(@Param("bonusName") String none);
 }

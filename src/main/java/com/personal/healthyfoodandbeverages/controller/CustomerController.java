@@ -36,14 +36,14 @@ public class CustomerController {
     }
 
     @GetMapping(path = APIUrl.PATH_VAR_CUSTOMER_ID, produces = "application/json")
-    public ResponseEntity<CommonResponse<CustomerResponse>> getById (
+    public ResponseEntity<CommonResponse<Customer>> getById (
             @PathVariable String customerId
     ) {
-        CustomerResponse customerResponse = customerService.getById(customerId);
-        CommonResponse<CustomerResponse> response = CommonResponse.<CustomerResponse>builder()
+        Customer customer = customerService.getById(customerId);
+        CommonResponse<Customer> response = CommonResponse.<Customer>builder()
                 .statusCode(HttpStatus.CREATED.value())
                 .message("Here's the data you wanted")
-                .data(customerResponse)
+                .data(customer)
                 .build();
         return ResponseEntity.ok(response);
     }

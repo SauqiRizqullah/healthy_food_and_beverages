@@ -1,5 +1,6 @@
 package com.personal.healthyfoodandbeverages.service;
 
+import com.personal.healthyfoodandbeverages.constant.MembershipName;
 import com.personal.healthyfoodandbeverages.dto.request.BonusRequest;
 import com.personal.healthyfoodandbeverages.dto.request.SearchBonusRequest;
 import com.personal.healthyfoodandbeverages.dto.response.BonusResponse;
@@ -19,6 +20,7 @@ public interface BonusService {
     String deleteBonusById (String bonusId);
 
 
+    Bonus getNoBonus(String membershipName);
 }
 
 /*

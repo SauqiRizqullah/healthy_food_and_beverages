@@ -15,4 +15,8 @@ public interface CustomerRepository extends JpaRepository<Customer, String>, Jpa
     @Modifying
     @Query(value = "UPDATE m_customer SET membership_id = :membershipId WHERE customer_id = :customerId", nativeQuery = true)
     void updateMembershipById (@Param("customerId") String customerId, @Param("membershipId") String newMembershipId);
+
+    @Modifying
+    @Query(value = "UPDATE m_customer SET poin = :poinUp WHERE customer_id = :customerId", nativeQuery = true)
+    void updatePoinById(@Param("customerId") String customerId, @Param("poinUp") Integer poinUp);
 }

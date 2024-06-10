@@ -1,5 +1,6 @@
 package com.personal.healthyfoodandbeverages.service.impl;
 
+import com.personal.healthyfoodandbeverages.constant.MembershipName;
 import com.personal.healthyfoodandbeverages.dto.request.BonusRequest;
 import com.personal.healthyfoodandbeverages.dto.request.SearchBonusRequest;
 import com.personal.healthyfoodandbeverages.dto.response.BonusResponse;
@@ -101,4 +102,14 @@ public class BonusServiceImpl implements BonusService {
         bonusRepository.delete(bonus);
         return "Therefore, you must choose another bonuses";
     }
+
+    @Override
+    public Bonus getNoBonus(String membershipName) {
+        Bonus noBonus = bonusRepository.findByName(MembershipName.NONE.toString());
+        return noBonus;
+    }
 }
+
+// Lanjutkan transaksi dari entity dulu bossque hingga service
+// Habis itu baru Readme
+// Habis itu baru jwt

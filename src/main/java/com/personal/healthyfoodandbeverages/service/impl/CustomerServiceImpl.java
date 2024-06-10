@@ -40,7 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
                 .customerName(customerRequest.getCustomerName())
                 .mobilePhoneNo(customerRequest.getMobilePhoneNo())
                 .membership(membership)
-                .poin(customerRequest.getPoin())
+                .poin(0)
                 .build();
 
         if (customer.getPoin() != 0) {
@@ -71,10 +71,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Transactional(readOnly = true)
     @Override
-    public CustomerResponse getById(String customerId) {
-        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Id was not there"));
+    public Customer getById(String customerId) {
 
-        return parseCustomerToCustomerResponse(customer);
+
+        return customerRepository.findById(customerId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Id was not there"));
     }
 
     @Transactional(readOnly = true)
@@ -112,4 +112,15 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.delete(customer);
         return parseCustomerToCustomerResponse(customer);
     }
+
+    @Override
+    public void updatePoinById(String customerId) {
+        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Id was not there"));
+        customer.setPoin(customer.getPoin()+1);
+        Integer poinUp = customer.getPoin();
+
+        customerRepository.updatePoinById(customerId, poinUp);
+    }
+
+    //coba create bonus baru dengan nilai None
 }

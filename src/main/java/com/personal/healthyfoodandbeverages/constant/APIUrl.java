@@ -10,5 +10,6 @@ public class APIUrl {
     public static final String PATH_VAR_MEMBERSHIP_ID = "/{membershipId}";
     public static final String CUSTOMER = "/api/v1/customers";
     public static final String PATH_VAR_CUSTOMER_ID = "/{customerId}";
+    public static final String TRANSACTION = "/api/v1/transactions";
 }
 
