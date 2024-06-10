@@ -2,6 +2,8 @@
 
 ### Program ini dirancang untuk mendukung bisnis yang bertemakan makanan dan minuman sehat. Bisnis ini memberikan pelayanan untuk memenuhi kepuasan customer, serta memberikan edukasi betapa pentingnya menjaga pola hidup sehat dengan adanya pelayanan bisnis ini.
 
+### Program ini mendukung fitur spesial bagi customer yang membeli membership untuk memberikan benefit kepada customer.
+
 ## Daftar Fitur
 1. Menu (Create new Menu(POST), Get Menu by ID(GET), Get All Menus(GET), Update Price by Menu Name(PUT), Delete Menu by ID(DELETE))
 2. Bonus (Create new Bonus(POST), Get Bonus by ID(GET), Get All Bonuses(GET), Update Poin by ID(PUT), Delete Bonus by ID(DELETE))
@@ -112,7 +114,7 @@ Postman:
 @PathVariable(B001)
 ```
 
-### Menu - Get All Menus
+### Bonus - Get All Bonuses
 URL:
 ``` 
 http://localhost:8080/api/v1/bonuses
