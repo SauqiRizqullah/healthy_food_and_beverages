@@ -83,75 +83,6 @@ Postman:
 @PathVariable(M001)
 ```
 
-## 4. Customer
-
-### Customer - Create new Customer
-URL:
-```
-http://localhost:8080/api/v1/customers
-```
-
-Postman:
-
-```
-@RequestBody
-{
-    "customerName": "Sauqi",
-    "mobilePhoneNo": "081331928191",
-    "membershipId": "MEMBER002"
-}
-
-```
-
-### Customer - Get by Id
-URL:
-```
-http://localhost:8080/api/v1/customers/{customerId}
-```
-
-Postman:
-
-```
-@PathVariable(C001)
-
-```
-
-### Customer - Get All Customers
-URL:
-```
-http://localhost:8080/api/v1/customers
-```
-
-Postman:
-``` 
-@RequestParam:
-
-customerName: {customerName}
-```
-
-### Customer - Update Membership Phone Number by Id
-URL:
-``` 
-http://localhost:8080/api/v1/customers/{customerId}
-```
-
-Postman:
-```
-@PathVariable(C001)
-@RequestParam(MEMBER003)
-```
-
-### Customer - Delete by Id
-URL:
-```
-http://localhost:8080/api/v1/customers/{customerId}
-```
-
-Postman:
-``` 
-@PathVariable(C001)
-```
-
 ## 2. Bonus
 
 ### Bonus - Create New Bonus
@@ -281,6 +212,76 @@ http://localhost:8080/api/v1/memberships/{membershipId}
 Postman:
 ```
 @PathVariable(M002)
+```
+
+
+## 4. Customer
+
+### Customer - Create new Customer
+URL:
+```
+http://localhost:8080/api/v1/customers
+```
+
+Postman:
+
+```
+@RequestBody
+{
+    "customerName": "Sauqi",
+    "mobilePhoneNo": "081331928191",
+    "membershipId": "MEMBER002"
+}
+
+```
+
+### Customer - Get by Id
+URL:
+```
+http://localhost:8080/api/v1/customers/{customerId}
+```
+
+Postman:
+
+```
+@PathVariable(C001)
+
+```
+
+### Customer - Get All Customers
+URL:
+```
+http://localhost:8080/api/v1/customers
+```
+
+Postman:
+``` 
+@RequestParam:
+
+customerName: {customerName}
+```
+
+### Customer - Update Membership Phone Number by Id
+URL:
+``` 
+http://localhost:8080/api/v1/customers/{customerId}
+```
+
+Postman:
+```
+@PathVariable(C001)
+@RequestParam(MEMBER003)
+```
+
+### Customer - Delete by Id
+URL:
+```
+http://localhost:8080/api/v1/customers/{customerId}
+```
+
+Postman:
+``` 
+@PathVariable(C001)
 ```
 
 ## 5. Transaction
